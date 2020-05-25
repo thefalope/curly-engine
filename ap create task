@@ -1,0 +1,72 @@
+var score = 5 ;
+
+onEvent("Contbtn", "click", function( ) {
+  setScreen("screen1");
+});
+onEvent("Playbtn", "click", function( ) {
+  restartgame();
+});
+onEvent("curryman", "click", function( ) {
+  wronganswer();
+});
+onEvent("none", "click", function( ) {
+  correctanswer();
+});
+onEvent("Nextbtn1", "click", function( ) {
+  next();
+});
+onEvent("Nextbtn2", "click", function( ) {
+  next();
+});
+
+onEvent("kobe", "click", function( ) {
+  correctanswer();
+});
+
+onEvent("lebron", "click", function( ) {
+  wronganswer();
+});
+
+function sendwrongscreen() {
+  setScreen("wrongscreen1");
+}
+function sendcorrectscreen() {
+  setScreen("Correctscreen1");
+}
+
+function correctanswer(){
+  sendcorrectscreen();
+  score = score + 3;
+  setText("Scorelabe",score);
+  
+  }
+
+function wronganswer() {
+  sendwrongscreen();
+  score = score - 2 ;
+  setText("Scorelabel", score);
+}
+
+function next(){
+  if (score == 8 ||score == 3){
+    setScreen("screen2");
+  }
+  else{
+    setScreen("Gameover");
+    }
+}
+  
+
+  
+
+function restartgame(){
+  setScreen("Homescreen");
+  score = 5;
+}
+
+//https://www.change.org/p/nba-get-flight-reacts-a-7-day-contract-with-the-golden-state-warriors 
+//https://www.google.com/search?q=nba+logo&tbm=isch&ved=2ahUKEwj0-MG7qcjpAhXDGd8KHX6YCkkQ2-cCegQIABAA&oq=nba+logo&gs_lcp=CgNpbWcQAzIECCMQJzIECAAQQzIECAAQQzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BggAEAUQHjoGCAAQCBAeOgQIABADOgYIABAKEBg6BAgAEBhQposCWMSrAmDXrQJoAnAAeACAAV6IAdQGkgECMTOYAQCgAQGqAQtnd3Mtd2l6LWltZw&sclient=img&ei=7jfIXvTJFMOz_Ab-sKrIBA&bih=649&biw=1366&rlz=1CAYDHM_enUS899US899&safe=active#imgrc=Ve42jH0kJdw6mM
+//https://www.vectorstock.com/royalty-free-vector/game-over-neon-text-game-over-neon-sign-vector-24252054
+//https://pl.pinterest.com/pin/565905509430517050/
+//https://www.deviantart.com/oblivious-art/art/NBA-Cartoon-Character-Challenge-Black-Mamba-674639717
+//https://blog.betzcenter.com/basketball/nba/nba-odds-2018-2019-season
